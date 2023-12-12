@@ -6,9 +6,8 @@ st.title('席替えアプリ')
 
 # 開始ボタン
 if st.button('開始'):
-    # 7行6列の席を表す配列を作成し、1から41の数字をランダムに割り当てる
-    seats = np.arange(1, 42).reshape(7, 6)
-    np.random.shuffle(seats)
+    # 1から41の数字をランダムに並べ替えて、7行6列の席に割り当てる
+    seats = np.random.choice(np.arange(1, 42), size=(7, 6), replace=False)
 
     # 結果の表示
     st.write(seats)
